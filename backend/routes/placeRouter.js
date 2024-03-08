@@ -5,7 +5,7 @@ const {getPlace,getNearByPlace,getNearByFoods,getNearByColleges, getNearByUniver
 router.get('/',(req,res)=>{
     return res.json({message:'Welcome to the place API'})
 })
-router.get('/all',getPlace)
+router.get('/places',getPlace)
 router.get('/nearbyplaces',getNearByPlace)
 router.get('/nearbyfoods',getNearByFoods)
 router.get('/nearbycolleges',getNearByColleges)

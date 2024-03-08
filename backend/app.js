@@ -9,7 +9,7 @@ const app=express()
 app.use(express.json())
 app.use(cors())
 
-//app.use('/',(req,res)=>res.json({data:"i am ok.."}))
+app.use('/',(req,res)=>res.json({data:"i am ok.."}))
 app.use('/api',require('./routes/placeRouter'))
 
 //conneting to database and listing to port
