@@ -17,7 +17,7 @@ const getNearByPlace=async(req,res)=>{
             { $near:
                 {
                   $geometry: { type: "Point",  coordinates: [latitude,longitude] },
-                  $maxDistance:distance
+                  $maxDistance:distance||1000
                 }
             }
         }).toArray();
@@ -38,7 +38,7 @@ const getNearByFoods=async(req,res)=>{
             { $near:
                {
                  $geometry: { type: "Point",  coordinates: [latitude,longitude] },
-                 $maxDistance:distance
+                 $maxDistance:distance||1000
                }
             }
         }).toArray();
@@ -59,7 +59,7 @@ const getNearByColleges=async(req,res)=>{
             { $near:
                {
                  $geometry: { type: "Point",  coordinates: [latitude,longitude] },
-                 $maxDistance:distance
+                 $maxDistance:distance||1000
                }
             }
         }).toArray();
@@ -80,7 +80,7 @@ const getNearByUnivercities=async(req,res)=>{
             { $near:
                {
                  $geometry: { type: "Point",  coordinates: [latitude,longitude] },
-                 $maxDistance:distance
+                 $maxDistance:distance||1000
                }
             }
         }).toArray();
