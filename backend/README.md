@@ -47,3 +47,11 @@ To run this project, you will need to add the following environment variables to
 
 **Server:** Node, Express
 
+
+## Contributing
+
+Contributions are always welcome!
+
+See [`contributing.md`](https://github.com/codingdud/minor-project/blob/main/CONTRIBUTING.md) for ways to get started.
+
+Please adhere to this project's `code of conduct`.
