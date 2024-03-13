@@ -1,0 +1,57 @@
+.mynav{
+    background-color:rgb(51, 55, 55);
+    position: absolute;
+    top: 5rem;
+    bottom: 0;
+    left: 0;
+    width: 100px;
+    height: 100%;
+    overflow: hidden;
+    transition: width 0.2s linear;
+    box-shadow: 0 3rem 1rem rgb(255, 255, 255);
+    border-radius: 1rem;
+}
+.mylogo{
+    text-align: center;
+    display: flex;
+    transition: all 0.5s ease;
+    margin: 10px 0 0 10px;
+}
+.mylogo img{
+    height: 5rem;
+    width: 5rem;
+}
+.mylogo span{
+    font-weight: bold;
+    padding-left: 15px;
+    font-size: 20;
+    text-transform:uppercase;
+}
+
+.mylist{
+    list-style-type: none
+}
+
+a {
+    position: relative;
+    color: aquamarine;
+    font-size: 14px;
+    display: table;
+    padding: 10px;
+}
+.mynav:hover{
+    width: 280px;
+    transition: all 0.5 ease;
+}
+
+.myfsa{
+    position: relative;
+    width: 40px;
+    text-align: center;
+}
+
+.navitem{
+    position: relative;
+    top:12px;
+    margin-left: 24px;
+}

@@ -15,31 +15,34 @@ We appreciate your interest in contributing to the Node.js Express API and React
    - Use `git clone https://github.com/<your-username>/minor-project.git` to clone your forked repository locally.
 
 3.1 **Install Dependencies for backend:**
-   - Navigate to backend  your cloned directory using `cd backend`.
-   - Run `npm install` to install the required Node.js packages.
+
+- Navigate to backend  your cloned directory using `cd backend`.
+- Run `npm install` to install the required Node.js packages.
 
 3.2 **Install Dependencies for frontend:**
-   - Navigate to frontend  your cloned directory using `cd frontend`.
-   - Run `npm install` to install the required Node.js packages.
+
+- Navigate to frontend  your cloned directory using `cd frontend`.
+- Run `npm install` to install the required Node.js packages.
 
 4. **Create a Branch:**
    - Use `git checkout -b <your-branch-name>` to create a new branch for your changes.
    - Use descriptive branch names (e.g., `backend/fix-route-handling`, `frontend/add-feature-x`).
+
 5. ## Branch Naming Conventions for Contributors
 
 Here's a common branch naming convention for contributors in Git projects:
 
-* **Prefix:** 
-    * Use a prefix to indicate the type of change. Common prefixes include:
-        * **feature/**: For new features.
-        * **bugfix/**: For bug fixes.
-        * **hotfix/**: For critical bug fixes that need to be deployed urgently.
-        * **chore/**: For changes that improve the development workflow but don't directly add features (e.g., documentation updates, dependency updates).
-        * **test/**: For adding or modifying tests.
-* **Description:** 
-    * Briefly describe the change in a clear and concise way. Use kebab-case (lowercase words separated by hyphens).
-* **Issue reference (optional):**
-    * If the branch relates to a specific issue in a tracking system (e.g., GitHub Issues), include the issue number after a hyphen (`-`).
+- **Prefix:**
+  - Use a prefix to indicate the type of change. Common prefixes include:
+    - **feature/**: For new features.
+    - **bugfix/**: For bug fixes.
+    - **hotfix/**: For critical bug fixes that need to be deployed urgently.
+    - **chore/**: For changes that improve the development workflow but don't directly add features (e.g., documentation updates, dependency updates).
+    - **test/**: For adding or modifying tests.
+- **Description:**
+  - Briefly describe the change in a clear and concise way. Use kebab-case (lowercase words separated by hyphens).
+- **Issue reference (optional):**
+  - If the branch relates to a specific issue in a tracking system (e.g., GitHub Issues), include the issue number after a hyphen (`-`).
 
 **Example:**
 
@@ -63,10 +66,10 @@ bugfix/issue-123-cannot-upload-profile-picture
 
 A good commit message should be clear, concise, and informative. Here's a common format:
 
-* **Verb in imperative mood:** Start the message with a verb in the imperative mood (e.g., fix, add, remove).
-* **Brief description:** Briefly describe the change made. 
-* **Issue reference (optional):** Include a reference to the related issue number in brackets (e.g., [Fixes #123]).
-* **Additional details (optional):** You can add additional details about the change if necessary.
+- **Verb in imperative mood:** Start the message with a verb in the imperative mood (e.g., fix, add, remove).
+- **Brief description:** Briefly describe the change made.
+- **Issue reference (optional):** Include a reference to the related issue number in brackets (e.g., [Fixes #123]).
+- **Additional details (optional):** You can add additional details about the change if necessary.
 
 **Example:**
 
@@ -74,7 +77,7 @@ A good commit message should be clear, concise, and informative. Here's a common
 fronted-fix: Fixed issue where users cannot upload profile pictures [Fixes #123]
 ```
 
-By following these conventions, contributors can ensure clear and consistent branching and version control within a project.   
+By following these conventions, contributors can ensure clear and consistent branching and version control within a project.
 **Development Guidelines**
 
 - **Code Style:** Adhere to consistent coding style throughout the project. Consider using a linter or code formatter like ESLint or Prettier.

@@ -1,0 +1,25 @@
+.header {
+    max-width: 100%;
+    margin: auto;
+    padding: 0.2rem;
+    display: flex;
+    justify-content: space-between;
+    background-color:rgb(51, 55, 55);
+  }
+  
+  .list {
+    display: flex;
+    list-style-type: none;
+    gap: 1rem;
+  }
+  
+  .list a {
+    text-decoration: none;
+    color: var(--teal);
+  }
+  
+  .list a:hover,
+  .list a.active {
+    color: var(--cyan);
+  }
+  
