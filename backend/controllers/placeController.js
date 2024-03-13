@@ -1,7 +1,9 @@
 const mongoose=require('mongoose')
-
+import client from '../model/connection'
 const getPlace=async(req,res)=>{
-    const collections = await mongoose.connection.collection('placedatas').find().toArray();
+    //const collections = await mongoose.connection.collection('placedatas').find().toArray();
+    let collections = await client.db('placeData').collection('placedatas').find().toArray()
+    //console.log(collections)
     return res.json(collections)
 }
 const getNearByPlace=async(req,res)=>{
@@ -12,7 +14,7 @@ const getNearByPlace=async(req,res)=>{
           message: "Missing fields"
         });
   }else{
-      const nearbylocation = await mongoose.connection.collection('placedatas').find({
+      const nearbylocation = await client.db('placeData').collection('placedatas').find({
           loc:
             { $near:
                 {
@@ -33,7 +35,7 @@ const getNearByFoods=async(req,res)=>{
           message: "Missing fields"
         });
   }else{
-      const nearbylocation = await mongoose.connection.collection('foods').find({
+      const nearbylocation = await client.db('placeData').collection('foods').find({
           loc:
             { $near:
                {
@@ -54,7 +56,7 @@ const getNearByColleges=async(req,res)=>{
           message: "Missing fields"
         });
   }else{
-      const nearbylocation = await mongoose.connection.collection('colleges').find({
+      const nearbylocation = await client.db('placeData').collection('colleges').find({
           loc:
             { $near:
                {
@@ -75,7 +77,7 @@ const getNearByUnivercities=async(req,res)=>{
           message: "Missing fields"
         });
   }else{
-      const nearbylocation = await mongoose.connection.collection('universities').find({
+      const nearbylocation = await client.db('placeData').collection('universities').find({
           loc:
             { $near:
                {

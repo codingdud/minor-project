@@ -27,3 +27,5 @@ mongoose.connect(`${mongoid}${db}?retryWrites=true&w=majority`)
     .catch((err)=>{
         console.log('my error->',err)
     })
+
+module.exports = app;
