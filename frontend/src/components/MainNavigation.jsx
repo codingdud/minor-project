@@ -20,22 +20,22 @@ function MainNavigation() {
           </li>
           <li>
             <NavLink
-              to="/event"
+              to="/maps"
               className={({ isActive }) =>
                 isActive ? classes.active : undefined
               }
             >
-              Events
+              Maps
             </NavLink>
           </li>
           <li>
             <NavLink
-              to="/newws"
+              to="/aboutus"
               className={({ isActive }) =>
                 isActive ? classes.active : undefined
               }
             >
-              Newsletter
+              About Us
             </NavLink>
           </li>
         </ul>

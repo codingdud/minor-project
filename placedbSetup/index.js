@@ -15,7 +15,7 @@ conn.on('disconnected',()=>{
 
 var categories=['accommodation','catering','education.university','education.college']
 const dbname=['placedatas','foods','universities','colleges']
-const id=0
+const id=3
 const url=`${BASE_URL}categories=${categories[id]}&filter=geometry:88d4b969d0397b5bd43266557f499541&bias=proximity:85.83194827478675,20.2723327&limit=450&apiKey=${YOUR_API_KEY}`
 async function getPlaceData(){
     const response = await fetch(url);
@@ -41,7 +41,7 @@ async function getPlaceData(){
     const newData = {};
       for (const key in n.properties) {
         if(key==='lon'||key==='lat'){
-            newData['loc']={ type: "Point", coordinates:[n.properties['lon'],n.properties['lat']] }
+            newData['loc']={ type: "Point", coordinates:[n.properties['lat'],n.properties['lon']] }
         }
         else{
             newData[key] = n.properties[key];

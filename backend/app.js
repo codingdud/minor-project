@@ -7,7 +7,7 @@ dotenv.config({path:'./.env.local'})
 
 const app=express()
 app.use(express.json())
-app.use(cors())
+app.use(cors());
 
 app.use('/health',(req,res)=>res.json({data:"i am ok.."}))
 app.use('/api',require('./routes/placeRouter'))

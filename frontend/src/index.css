@@ -30,7 +30,7 @@
     --teal: #2e6d81;
     --cyan: #7de6f4;
     --black: #050d14;
-    --shadow: #050d1480;
+    --shadow: #191f2185;
 }
 
 html {
@@ -41,7 +41,11 @@ html {
 *:after {
   box-sizing: inherit;
 }
-
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
 p {
   margin-bottom: 1rem;
 }
@@ -97,3 +101,4 @@ img {
   width: 100%;
   max-width: 100%;
 }
+

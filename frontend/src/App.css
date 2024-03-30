@@ -1,0 +1,7 @@
+.leaflet-container {
+  width: 70vw;
+  height: 90vh;
+  border-bottom-left-radius: 1rem;
+  border-start-start-radius: 1rem;
+  margin: 0.4rem;
+}

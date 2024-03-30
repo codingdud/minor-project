@@ -1,5 +1,5 @@
 const mongoose=require('mongoose')
-import client from '../model/connection'
+const client=require('../model/connection')
 const getPlace=async(req,res)=>{
     //const collections = await mongoose.connection.collection('placedatas').find().toArray();
     let collections = await client.db('placeData').collection('placedatas').find().toArray()
@@ -69,6 +69,12 @@ const getNearByColleges=async(req,res)=>{
   } 
 }
 
+const getAllColleges=async(req,res)=>{
+  let collections = await client.db('placeData').collection('colleges').find().toArray()
+  return res.json(collections)
+}
+
+
 const getNearByUnivercities=async(req,res)=>{
   let {latitude,longitude,distance}=req.body;
   //console.log(latitude,longitude,distance)
@@ -89,10 +95,17 @@ const getNearByUnivercities=async(req,res)=>{
       return res.json(nearbylocation)
   } 
 }
+const getAllUnivercities=async(req,res)=>{
+  let collections = await client.db('placeData').collection('universities').find().toArray()
+  return res.json(collections)
+}
+
 module.exports = {
    getPlace,
    getNearByPlace,
    getNearByFoods,
    getNearByColleges,
-   getNearByUnivercities
+   getAllColleges,
+   getNearByUnivercities,
+   getAllUnivercities,
 }
