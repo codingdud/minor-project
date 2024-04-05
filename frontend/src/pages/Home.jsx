@@ -21,21 +21,21 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="features">
-        <div class="container">
+      <section id="features" className={classes.section}>
+        <div className={classes.container}>
           <h2>Features</h2>
-          <div class="feature">
-            <img src="https://via.placeholder.com/50" alt="Icon" />
+          <div className={classes.feature}>
+            <img src="https://www.denofgeek.com/wp-content/uploads/2023/05/Hells-Paradise-Gabimaru-and-Yamada-Asaemon-Ready-For-Battle.jpg?fit=1920%2C1080" alt="Icon" />
             <h3>Search Options</h3>
             <p>Filter by location, price, amenities, and more.</p>
           </div>
-          <div class="feature">
-            <img src="https://via.placeholder.com/50" alt="Icon" />
+          <div className={classes.feature}>
+            <img src="https://th.bing.com/th/id/OIP.LRFa5oiTjD6pHr64GfG5_QHaEK?rs=1&pid=ImgDetMain" alt="Icon" />
             <h3>User Reviews</h3>
             <p>Read reviews from other students to find the best accommodation.</p>
           </div>
-          <div class="feature">
-            <img src="https://via.placeholder.com/50" alt="Icon" />
+          <div className={classes.feature}>
+            <img src="https://th.bing.com/th/id/OIP.eYp3DrA_CWL6FcIsLnOQlAHaFP?w=2339&h=1654&rs=1&pid=ImgDetMain" alt="Icon" />
             <h3>Save Favorites</h3>
             <p>Save your favorite listings for easy access later.</p>
           </div>
@@ -43,7 +43,7 @@ export default function Home() {
       </section>
 
       <footer>
-        <div class="container">
+        <div className={classes.footer}>
           <p>&copy; 2024 Student Accommodation Finder</p>
         </div>
       </footer>

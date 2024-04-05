@@ -1,48 +1,27 @@
 import { MapContainer,TileLayer,Marker,Popup } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
-import {Icon} from 'leaflet'
+
 import { useDispatch,useSelector } from 'react-redux';
 import { mylocAction } from '../../store/myloc';
 import { pgsAction } from '../../store/pgs';
 const myHeaders = new Headers();
 
 import classes from './maps.module.css'
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import Form from '../components/form';
 
 
-const collegeIcon = new Icon ({
-  iconUrl : 'https://cdn3.iconfinder.com/data/icons/placeholder-3/64/education-college-school-placeholder-pin-pointer-gps-map-location-1024.png',
-  iconSize : [35,35], // size of the icon
-  //iconAnchor : [1,1], // point of the icon which will correspond to marker's location
-  popupAnchor : [-1, -1] // point from which the popup should open relative to the iconAnchor
+import { constomIcons } from '../utils/costomicons';
 
-})
-const foodIcon = new Icon ({
-  iconUrl : 'https://img.icons8.com/doodle/48/apple.png',
-  iconSize : [35, 35], // size of the icon
-  iconAnchor : [22, 94], // point of the icon which will correspond to marker's location
-  popupAnchor : [-3, -76] // point from which the popup should open relative to the iconAnchor
-})
-const healthIcon = new Icon ({
-  iconUrl: 'https://img.icons8.com/doodle/48/heart-with-pulse.png',
-  iconSize : [35,35], // size of the icon
-  iconAnchor : [22,94], // point of the icon which will correspond to marker's location
-  popupAnchor : [-3, -76] // point from which the popup should open relative to the iconAnchor
-})
 
-const housingIcon = new Icon({
-  iconUrl: 'https://img.icons8.com/plasticine/100/exterior.png',
-  iconSize: [35, 35], // size of the icon
-  iconAnchor: [1, 1], // point of the icon which will correspond to marker's location
-  popupAnchor: [-1, -2] // point from which the popup should open relative to the iconAnchor
-})
+
 
 export default function Maps() {
   const dispatch=useDispatch()
   const myloc=useSelector(state=>state.myLoc.loc)
   const college=useSelector(state=>state.colleges.selected)
   const pgs=useSelector(state=>state.pgs.pgs)
+  const mapref=useRef()
   
 
   console.log(myloc)
@@ -67,6 +46,9 @@ export default function Maps() {
   fetch("https://placebackend.animeshk.me/api/nearbyplaces", requestOptions)
     .then((response) => response.json())
     .then((result) => {dispatch(pgsAction.setPgs(result))})
+    .then(()=>{
+      mapref.current.flyTo(college.loc.coordinates,12)
+    })
     .catch((error) => console.error(error));}
   },[college])
   
@@ -77,29 +59,34 @@ export default function Maps() {
     });
   },[])
   return (
+    <div>
     <div className={classes.container}>
-      {myloc.length>0?(<MapContainer center={myloc} zoom={13} scrollWheelZoom={true}>
+      {myloc.length>0?(<MapContainer ref={mapref} center={myloc} zoom={13} scrollWheelZoom={false}>
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
-        <Marker position={myloc}>
+        <Marker position={myloc} icon={constomIcons.marker}>
           <Popup>
             A pretty CSS3 popup. <br /> Easily customizable.
           </Popup>
         </Marker>
-        {college&&<Marker position={college.loc.coordinates} icon={collegeIcon}>
+        {college&&<Marker position={college.loc.coordinates} icon={constomIcons.collegeIcon}>
           <Popup>
             another one
           </Popup>
         </Marker>}
-        {pgs&&pgs.map((f)=>{return(<Marker position={f.loc.coordinates} icon={housingIcon}>
+        {pgs&&pgs.map((f)=>{return(<Marker position={f.loc.coordinates} icon={constomIcons.housingIcon}>
           <Popup>
             {f.name}
           </Popup>
         </Marker>)})}
       </MapContainer>):<p>loading...</p>}
       <Form />
+    </div>
+    <div>
+      <h1>ml model</h1>
+    </div>
     </div>
   )
 }

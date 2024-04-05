@@ -4,4 +4,5 @@
   border-bottom-left-radius: 1rem;
   border-start-start-radius: 1rem;
   margin: 0.4rem;
+  z-index:0;
 }

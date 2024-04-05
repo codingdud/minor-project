@@ -18,3 +18,11 @@ The `-p` option in both `git-add` and `git-commit` allows you to interactively s
 - s - split the current hunk into smaller hunks
 - e - manually edit the current hunk
 - ? - print help
+
+
+
+
+
+
+
+

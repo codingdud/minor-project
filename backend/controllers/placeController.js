@@ -14,15 +14,15 @@ const getNearByPlace=async(req,res)=>{
           message: "Missing fields"
         });
   }else{
-      const nearbylocation = await client.db('placeData').collection('placedatas').find({
-          loc:
-            { $near:
-                {
-                  $geometry: { type: "Point",  coordinates: [latitude,longitude] },
-                  $maxDistance:distance||1000
-                }
-            }
-        }).toArray();
+      const nearbylocation = await client.db('placeData').collection('placedatas').aggregate([
+        {
+          $geoNear: {
+            near: { type: "Point", coordinates: [latitude,longitude] },
+            distanceField: "distance",
+            maxDistance: distance||1000
+          }
+        },
+      ]).toArray();
       return res.json(nearbylocation)
   } 
 }
@@ -35,15 +35,15 @@ const getNearByFoods=async(req,res)=>{
           message: "Missing fields"
         });
   }else{
-      const nearbylocation = await client.db('placeData').collection('foods').find({
-          loc:
-            { $near:
-               {
-                 $geometry: { type: "Point",  coordinates: [latitude,longitude] },
-                 $maxDistance:distance||1000
-               }
-            }
-        }).toArray();
+      const nearbylocation = await client.db('placeData').collection('foods').aggregate([
+        {
+          $geoNear: {
+            near: { type: "Point", coordinates: [latitude,longitude] },
+            distanceField: "distance",
+            maxDistance: distance||1000
+          }
+        },
+      ]).toArray();
       return res.json(nearbylocation)
   } 
 }
@@ -56,15 +56,15 @@ const getNearByColleges=async(req,res)=>{
           message: "Missing fields"
         });
   }else{
-      const nearbylocation = await client.db('placeData').collection('colleges').find({
-          loc:
-            { $near:
-               {
-                 $geometry: { type: "Point",  coordinates: [latitude,longitude] },
-                 $maxDistance:distance||1000
-               }
-            }
-        }).toArray();
+      const nearbylocation = await client.db('placeData').collection('colleges').aggregate([
+        {
+          $geoNear: {
+            near: { type: "Point", coordinates: [latitude,longitude] },
+            distanceField: "distance",
+            maxDistance: distance||1000
+          }
+        },
+      ]).toArray();
       return res.json(nearbylocation)
   } 
 }
@@ -83,15 +83,15 @@ const getNearByUnivercities=async(req,res)=>{
           message: "Missing fields"
         });
   }else{
-      const nearbylocation = await client.db('placeData').collection('universities').find({
-          loc:
-            { $near:
-               {
-                 $geometry: { type: "Point",  coordinates: [latitude,longitude] },
-                 $maxDistance:distance||1000
-               }
-            }
-        }).toArray();
+      const nearbylocation = await client.db('placeData').collection('universities').aggregate([
+        {
+          $geoNear: {
+            near: { type: "Point", coordinates: [latitude,longitude] },
+            distanceField: "distance",
+            maxDistance: distance||1000
+          }
+        },
+      ]).toArray();
       return res.json(nearbylocation)
   } 
 }
