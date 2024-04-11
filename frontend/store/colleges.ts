@@ -1,6 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const collegeState={
+type typecollege={
+    colleges:Array<object>|null,
+    selected:object|null
+}
+
+const collegeState:typecollege={
     colleges:null,
     selected:null
 }

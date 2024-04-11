@@ -1,4 +1,6 @@
 import classes from './home.module.css'
+import imagemap1 from '../assets/map1.png'
+import imagemap2 from '../assets/map2.png'
 export default function Home() {
   return (
     <div>
@@ -12,7 +14,7 @@ export default function Home() {
 
       <section id="search" className={classes.search +" "+ classes.section}>
         <div class="container">
-          <h2>Search for Accommodation</h2>
+          <h2 className='text-3xl font-bold underline'>Search for Accommodation</h2>
           <form className={classes.form}>
             <input type="text" placeholder="Enter location" />
             <input type="text" placeholder="Enter budget" />
@@ -25,19 +27,12 @@ export default function Home() {
         <div className={classes.container}>
           <h2>Features</h2>
           <div className={classes.feature}>
-            <img src="https://www.denofgeek.com/wp-content/uploads/2023/05/Hells-Paradise-Gabimaru-and-Yamada-Asaemon-Ready-For-Battle.jpg?fit=1920%2C1080" alt="Icon" />
+            <img src={imagemap1} alt="Icon" />
             <h3>Search Options</h3>
-            <p>Filter by location, price, amenities, and more.</p>
+            <p>The page allows users to input their current location and then find the university’s nearest campus. </p>
           </div>
           <div className={classes.feature}>
-            <img src="https://th.bing.com/th/id/OIP.LRFa5oiTjD6pHr64GfG5_QHaEK?rs=1&pid=ImgDetMain" alt="Icon" />
-            <h3>User Reviews</h3>
-            <p>Read reviews from other students to find the best accommodation.</p>
-          </div>
-          <div className={classes.feature}>
-            <img src="https://th.bing.com/th/id/OIP.eYp3DrA_CWL6FcIsLnOQlAHaFP?w=2339&h=1654&rs=1&pid=ImgDetMain" alt="Icon" />
-            <h3>Save Favorites</h3>
-            <p>Save your favorite listings for easy access later.</p>
+            <img src={imagemap2} alt="Icon" />
           </div>
         </div>
       </section>

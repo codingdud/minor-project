@@ -1,11 +1,11 @@
 import React from 'react'
 import {RouterProvider, createBrowserRouter} from 'react-router-dom'
-import Home from './pages/Home.jsx';
-import RootLayout from './pages/RootLayout.jsx';
+import Home from './pages/Home.tsx';
+import RootLayout from './pages/RootLayout.tsx';
 import Maps from './pages/Maps.jsx'
 
 import './App.css'
-import AboutUs from './pages/AboutUs.jsx';
+import AboutUs from './pages/AboutUs.tsx';
 
 export default function App() {
   const router=createBrowserRouter([
